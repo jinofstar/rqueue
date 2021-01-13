@@ -30,4 +30,6 @@ dependencies {
     compile 'io.lettuce:lettuce-core'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
     providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
 }
