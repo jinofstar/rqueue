@@ -111,8 +111,8 @@ public class LightRepository {
       sink.onRequest(
           e -> {
             long demand = sink.requestedFromDownstream();
-            for (int i = 0, j = currentOffset; i < demand && j < readLights.size(); i++, j++) {
-              sink.next(readLights.get(j));
+            for (int i = 0; i < demand && currentOffset < readLights.size(); i++, currentOffset++) {
+              sink.next(readLights.get(currentOffset));
             }
             if (currentOffset == readLights.size()) {
               readLights = reactiveReadToList();
